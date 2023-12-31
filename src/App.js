@@ -32,7 +32,6 @@ class App extends Component{
             }
           }).then(response =>{
             console.log(response.data);
-            
           });
         }}></SearchContent>
         {this.getContent()}
@@ -40,6 +39,7 @@ class App extends Component{
     )
   }
   
+
 }
 
 export default App;
