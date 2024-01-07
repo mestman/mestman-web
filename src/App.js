@@ -8,16 +8,15 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      mode: 'welcome'
+      mode: 'welcome',
+      contents: []
     }
   }
 
   getContent(){
     var _article = null;
-    if(this.state.mode === 'welcome'){
-      _article = <ReadContent></ReadContent>
-    }else if(this.state.mode === 'read'){
-      _article = <ReadContent></ReadContent>
+    if(this.state.mode === 'read'){
+      _article = <ReadContent contents={this.state.contents}></ReadContent>
     }
     return _article;
   }
@@ -31,15 +30,17 @@ class App extends Component{
               characterName: _name
             }
           }).then(response =>{
-            console.log(response.data);
+            var _contents = response.data;
+            this.setState({
+              mode: 'read',
+              contents: _contents 
+            });
           });
-        }}></SearchContent>
+        }.bind(this)}></SearchContent>
         {this.getContent()}
       </div>
     )
   }
-  
-
 }
 
 export default App;
