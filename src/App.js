@@ -3,6 +3,7 @@ import './App.css';
 import { Component } from 'react';
 import ReadContent from './components/ReadContent';
 import SearchContent from './components/SearchContent';
+import HeaderContent from './components/HeaderContent';
 
 class App extends Component{
   constructor(props){
@@ -24,6 +25,7 @@ class App extends Component{
   render(){
     return (
       <div className="App">
+        <HeaderContent></HeaderContent>
         <SearchContent onSubmit={function(_name){
           axios.get("http://localhost:8080/api/character/symbol", {
             params:{

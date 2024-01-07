@@ -5,7 +5,7 @@ class ReadContent extends Component{
 
     render(){
         return(
-            <article>
+            <article class='article'>
                 <table class='table'>
                     <thead>
                         <tr>
