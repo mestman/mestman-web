@@ -32,7 +32,8 @@ class App extends Component{
               characterName: _name
             }
           }).then(response =>{
-            var _contents = response.data;
+            var _contents = response.data.data;
+            console.log(_contents);
             this.setState({
               mode: 'read',
               contents: _contents 
